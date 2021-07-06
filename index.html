@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <meta charset="UTF-8">
+    <title>Min Kim 20190085</title>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />  <link href="./capital_game.css" rel="stylesheet" />
+    <style>
+      .ui-autocomplete {
+      max-height: 250px;
+      overflow-y: auto;
+      /* prevent horizontal scrollbar */
+      overflow-x: hidden;
+      }
+    </style>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+  </head>
+  <body >
+    <!--Your HTML here-->
+    
+    <div id='map' style='width: 600px; height: 450px; '></div>
+    <script>
+    // TO MAKE THE MAP APPEAR YOU MUST
+    // ADD YOUR ACCESS TOKEN FROM
+    // https://account.mapbox.com
+    mapboxgl.accessToken = 'pk.eyJ1IjoibWluMjE3IiwiYSI6ImNrb2VjdnVjYTAwZ3QybnBkYmJlcmp5ZWoifQ.48YdBEazkrLhoUmhTP5ikg';
+    // var map = new mapboxgl.Map({
+    //   container: 'map', // container ID
+    //   style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL satellite-streets-v11
+    //   center: [-74.5, 40], // starting position [lng, lat]
+    //   zoom: 4 // starting zoom
+    // });
+    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <h1 id="title">
+      World Capital Quiz Game
+    </h1>
+    <h2 id="subtitle">
+      Do you know the capital of this country?
+    </h2>
+    <table id="table" cellpadding="4px">
+      <select id="categories">
+        <option value="All">All</option>
+        <option value="Correct">Correct</option>
+        <option value="Wrong">Wrong</option>
+      </select>
+      <form>
+        <input id="pr3__reset" type="button" value="Reset"/>
+      </form>
+      <form>
+        <input id="pr3__clear" type="button" value="Clear"/>
+      </form>
+      <form>
+        <input id="pr3__undo" type="button" value="Undo"/><br/>
+      </form>
+      <tr id="header" style="text-align: center;">
+        <td>COUNTRY</td>
+        <td>CAPITAL CITY</td>
+        <td>ANSWER</td>
+      </tr>
+      <tr style="text-align:left ;">
+        <td id="pr2__country">Indonesia</td>
+        <td>
+          <form>
+          <input id="pr2__capital" type="text" /><br/>
+          </form>
+        </td>
+        <td>
+          <form>
+            <input id="pr2__button" type="button" value="Check Answer"/><br/>
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td id="empty" colspan="3"style="text-align: center;">The list is empty</td>
+      </tr>
+    </table>
+    <script src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="./capital_game.js"></script>
+    
+  </body>
+</html>
+
+
